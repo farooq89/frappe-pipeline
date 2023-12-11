@@ -5,7 +5,6 @@ pipeline {
         stage('Build and Deploy') {
             steps {
                 script {
-                    script {
                     sh 'docker-compose -f pwd.yml up -d'
                 }
             }
@@ -15,6 +14,7 @@ pipeline {
     post {
         always {
             script {
+                // Use the 'dockerCompose' step to bring down services
                 dockerCompose(
                     dockerComposeFile: 'docker-compose.yml',
                     downOptions: ' --volumes'
