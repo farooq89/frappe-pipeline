@@ -5,10 +5,8 @@ pipeline {
         stage('Build and Deploy') {
             steps {
                 script {
-                    dockerCompose(
-                        dockerComposeFile: 'docker-compose.yml',
-                        upOptions: ' -d'
-                    )
+                    script {
+                    sh 'docker-compose -f pwd.yml up -d'
                 }
             }
         }
