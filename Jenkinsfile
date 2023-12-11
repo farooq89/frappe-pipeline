@@ -5,7 +5,7 @@ pipeline {
         stage('Build and Deploy') {
             steps {
                 script {
-                    sh 'docker-compose -f pwd.yml up'
+                    sh 'docker-compose -f pwd.yml up -d'
                 }
             }
         }
