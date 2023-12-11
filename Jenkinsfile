@@ -11,15 +11,15 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            script {
-                // Use the 'dockerCompose' step to bring down services
-                dockerCompose(
-                    dockerComposeFile: 'docker-compose -f pwd.yml',
-                    downOptions: ' --volumes'
-                )
-            }
-        }
-    }
+    // post {
+    //     always {
+    //         script {
+    //             // Use the 'dockerCompose' step to bring down services
+    //             dockerCompose(
+    //                 dockerComposeFile: 'docker-compose -f pwd.yml',
+    //                 downOptions: ' --volumes'
+    //             )
+    //         }
+    //     }
+    // }
 }
