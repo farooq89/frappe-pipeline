@@ -14,7 +14,7 @@ pipeline {
     // post {
     //     always {
     //         script {
-    //             // Use the 'dockerCompose' step to bring down servicesssssssssssss
+    //             // Use the 'dockerCompose' step to bring down servicessssssss
     //             dockerCompose(
     //                 dockerComposeFile: 'docker-compose -f pwd.yml',
     //                 downOptions: ' --volumes'
