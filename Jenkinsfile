@@ -5,7 +5,7 @@ pipeline {
         stage('Build and Deploy') {
             steps {
                 script {
-                    sh 'docker-compose -f pwd.yml down'
+                    // sh 'docker-compose -f pwd.yml down'
                     sh 'docker-compose -f pwd.yml up -d'
                 }
             }
@@ -15,7 +15,7 @@ pipeline {
     // post {
     //     always {
     //         script {
-    //             // Use the 'dockerCompose' step to bring down servicessssssssssssss
+    //             // Use the 'dockerCompose' step to bring down service
     //             dockerCompose(
     //                 dockerComposeFile: 'docker-compose -f pwd.yml',
     //                 downOptions: ' --volumes'
