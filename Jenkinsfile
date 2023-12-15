@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     sh 'docker-compose -f pwd.yml down'
-                    sh 'docker-compose -f pwd.yml up'
+                    sh 'docker-compose -f pwd.yml up -d'
                 }
             }
         }
