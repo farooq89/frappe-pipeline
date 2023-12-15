@@ -16,13 +16,12 @@ pipeline {
     post {
         always {
             script {
-                // This block will be executed always, regardless of the build result
                 slackSend(channel: '#atd-notifications', color: 'good', message: "Build completed successfully!")
             }
         }
         failure {
             script {
-                // This block will be executed only if the build failsss
+                // 123
                 slackSend(channel: '#atd-notifications', color: 'danger', message: "Build failed!")
             }
         }
