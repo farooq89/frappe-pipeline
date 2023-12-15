@@ -21,7 +21,7 @@ pipeline {
         }
         failure {
             script {
-                // 12311
+                // 1231111
                 slackSend(channel: '#atd-notifications', color: 'danger', message: "Build failed!")
             }
         }
