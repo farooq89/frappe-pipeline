@@ -22,7 +22,7 @@ pipeline {
         }
         failure {
             script {
-                // This block will be executed only if the build fails
+                // This block will be executed only if the build failsss
                 slackSend(channel: '#atd-notifications', color: 'danger', message: "Build failed!")
             }
         }
