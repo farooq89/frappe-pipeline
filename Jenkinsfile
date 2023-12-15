@@ -13,16 +13,20 @@ pipeline {
         }
     }
 
-    // post {
-    //     always {
-    //         script {
-    //             // Use the 'dockerCompose' step to bring down servicessssss
-    //             dockerCompose(
-    //                 dockerComposeFile: 'docker-compose -f pwd.yml',
-    //                 downOptions: ' --volumes'
-    //             )
-    //         }
-    //     }
-    // }
+    post {
+        always {
+            script {
+                // This block will be executed always, regardless of the build result
+                slackSend(channel: '#atd-notifications', color: 'good', message: "Build completed successfully!")
+            }
+        }
+        failure {
+            script {
+                // This block will be executed only if the build fails
+                slackSend(channel: '#atd-notifications', color: 'danger', message: "Build failed!")
+            }
+        }
+    }
 }
+
 
