@@ -87,8 +87,6 @@ services:
         pwd;
         # rm -rf associated_terminals/;
         # echo "associated_terminal" >> apps.txt;
-        npm install antd;
-        npm -i;
         # sleep 60;
         # bash -c '
         #   if [[ -d /home/frappe/frappe-bench/apps/associated_terminals ]]; then
