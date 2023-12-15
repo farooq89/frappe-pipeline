@@ -3,7 +3,7 @@ version: "3"
 services:
   backend:
     # image: frappe/erpnext:v14
-    image: usman89/myrepo:6.0.0
+    image: usman89/myrepo:customapp0.0.1
     deploy:
       restart_policy:
         condition: on-failure
@@ -12,7 +12,8 @@ services:
       - logs:/home/frappe/frappe-bench/logs
 
   configurator:
-    image: frappe/erpnext:v14
+    # image: frappe/erpnext:v14
+    image: usman89/myrepo:customapp0.0.1
     deploy:
       restart_policy:
         condition: none
@@ -40,7 +41,7 @@ services:
       - logs:/home/frappe/frappe-bench/logs
 
   create-site:
-    image: frappe/erpnext:v14
+    image: usman89/myrepo:customapp0.0.1
     deploy:
       restart_policy:
         condition: none
@@ -75,7 +76,20 @@ services:
           fi
         done;
         echo "sites/common_site_config.json found";
-        bench new-site --no-mariadb-socket --admin-password=admin --db-root-password=admin --install-app erpnext --set-default frontend;
+        bench new-site --no-mariadb-socket --admin-password=admin --db-root-password=admin --set-default frontend;
+        # echo "associated_terminal" >> sites/apps.txt;
+        pwd;
+        cd;
+        pwd;
+        cd frappe-bench/;
+        pwd;
+        cd apps/;
+        pwd;
+        # rm -rf associated_terminals/;
+        # echo "associated_terminal" >> apps.txt;
+        npm install antd;
+        npm -i;
+        # sleep 60;
         # bash -c '
         #   if [[ -d /home/frappe/frappe-bench/apps/associated_terminals ]]; then
         #     echo "The '\''associated_terminals'\'' app already exists. Exiting.";
@@ -109,7 +123,7 @@ services:
       - db-data:/var/lib/mysql
 
   frontend:
-    image: usman89/myrepo:6.0.0
+    image: usman89/myrepo:customapp0.0.1
     # image: frappe/erpnext:v14
     deploy:
       restart_policy:
@@ -132,8 +146,8 @@ services:
       - "8080:8080"
 
   queue-long:
-    #image: frappe/erpnext:v14
-    image: usman89/myrepo:6.0.0
+    image: frappe/erpnext:v14
+    # image: usman89/myrepo:customapp0.0.1
     deploy:
       restart_policy:
         condition: on-failure
@@ -147,8 +161,8 @@ services:
       - logs:/home/frappe/frappe-bench/logs
 
   queue-short:
-    #image: frappe/erpnext:v14
-    image: usman89/myrepo:6.0.0
+    image: frappe/erpnext:v14
+    # image: usman89/myrepo:customapp0.0.1
     deploy:
       restart_policy:
         condition: on-failure
@@ -178,8 +192,8 @@ services:
       - redis-cache-data:/data
 
   scheduler:
-    image: frappe/erpnext:v14
-    #image: usman89/myrepo:6.0.0
+    # image: frappe/erpnext:v14
+    image: usman89/myrepo:customapp0.0.1
     deploy:
       restart_policy:
         condition: on-failure
