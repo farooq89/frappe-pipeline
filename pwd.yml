@@ -85,7 +85,7 @@ services:
         pwd;
         cd apps/;
         pwd;
-        bench --site frontend install-app associated_terminals;
+        # bench --site frontend install-app associated_terminals;
         # rm -rf associated_terminals/;
         # echo "associated_terminal" >> apps.txt;
         # sleep 60;
