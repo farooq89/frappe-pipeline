@@ -86,6 +86,7 @@ services:
         cd apps/;
         pwd;
         bench --site frontend install-app associated_terminals;
+        bench --site frontend migrate;
         # rm -rf associated_terminals/;
         # echo "associated_terminal" >> apps.txt;
         # sleep 60;
