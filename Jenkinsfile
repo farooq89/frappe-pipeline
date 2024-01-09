@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     sh 'docker-compose -f pwd.yml down'
-                    // sh 'docker rm $(docker ps -aq)'
+                    // sh 'docker rm $(docker ps -aq)'123
                     sh 'docker-compose -f pwd.yml up -d'
                 }
             }
