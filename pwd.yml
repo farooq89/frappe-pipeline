@@ -206,7 +206,6 @@ services:
 
   websocket:
     #image: frappe/erpnext:v14
-    #image: frappe/erpnext:v14
     image: usman89/myrepo:customapp0.0.1
     deploy:
       restart_policy:
