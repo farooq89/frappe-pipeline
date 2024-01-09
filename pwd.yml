@@ -205,7 +205,8 @@ services:
       - logs:/home/frappe/frappe-bench/logs
 
   websocket:
-    image: frappe/erpnext:v14
+    #image: frappe/erpnext:v14
+    image: usman89/myrepo:customapp0.0.1
     deploy:
       restart_policy:
         condition: on-failure
